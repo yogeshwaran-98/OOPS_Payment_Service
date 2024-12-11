@@ -4,12 +4,15 @@ But this is similar to debitcard also , so we create a common class called card 
 
 In future , the card class can have more methods like pay() , checkcvv() etc .. but we dont know how to implement the method (whats the card type etc.. it takes as input ) . so we make it abstact .
 abstract void pay() , if we make the method as abstract , then the class should also be abstract.
+( The Card class in your example is declared as abstract because it is not providing a complete implementation of the PaymentMethod interface.  )
 
 Now , the abstact method needs to be implemented in all child classes also . 
 
 Here , we have the pay method in the card class , but other payment methods like upi / wallet payment cannot use this pay() method from class that is specifically for card . 
 
 So , here we make use of Interface . 
+By using an interface, the classes implementing the pay() method don't need to inherit from a base class. This avoids tight coupling with the base class and increases flexibility.
+methods in an interface are implicitly public and abstract (unless they are static or default methods). This is because an interface is designed to define a contract that must be implemented by any class that implements the interface.
 
 We create an interface and create the method there . With an interface, you can define a method that accepts any class implementing the interface, ensuring that the pay() method is called without worrying about the specific type of card. 
 
