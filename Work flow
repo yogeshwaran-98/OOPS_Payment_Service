@@ -1,0 +1,25 @@
+1st , we try to create a separate class for creditcard with fields like cardno , cardholder etc
+
+But this is similar to debitcard also , so we create a common class called card from which other classes like credit card , debit card can extend ( we use the concept of inheritance here )
+
+In future , the card class can have more methods like pay() , checkcvv() etc .. but we dont know how to implement the method (whats the card type etc.. it takes as input ) . so we make it abstact .
+abstract void pay() , if we make the method as abstract , then the class should also be abstract.
+
+Now , the abstact method needs to be implemented in all child classes also . 
+
+Here , we have the pay method in the card class , but other payment methods like upi / wallet payment cannot use this pay() method from class that is specifically for card . 
+
+So , here we make use of Interface . 
+
+We create an interface and create the method there . With an interface, you can define a method that accepts any class implementing the interface, ensuring that the pay() method is called without worrying about the specific type of card. 
+
+We create a payment service to create addpayment and makepayment methods , and when we call pm.pay() -> ths is an example of run time polymorphism
+
+when we call the makepayment method in the service class from the main application , 
+		ps.makePayment("clientDB");
+		ps.makePayment("clientCB");
+		ps.makePayment("clientUPI");
+the pay method inside the makepayment is decided on run time , hence this is runtime polymorphism ( method overriding )
+
+
+
