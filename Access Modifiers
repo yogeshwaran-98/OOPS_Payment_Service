@@ -1,0 +1,6 @@
+Comparison Table
+Modifier	Same Class	Same Package	Subclass (Different Package)	Other Packages
+public	  ✅	            ✅	          ✅	                          ✅
+protected	✅	            ✅	          ✅	                          ❌
+default	  ✅	            ✅	          ❌	                          ❌
+private	  ✅	            ❌	          ❌	                          ❌
